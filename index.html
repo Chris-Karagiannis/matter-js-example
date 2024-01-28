@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matter.js Example</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation" id="menuButton">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="d-flex justify-content-between nav-spacing align-items-center" id="selectedInfo">
+              <label class="form-check-label navbar-brand align-items-center" for="colourChange" id="colourChangeText">
+                Colour
+              </label>
+              <input type="color" id="colourChange" class="">
+              
+              <p class="navbar-brand align-items-center" id="showId"></p>
+              <button type="button" class="btn btn-light" onclick="deleteSelection()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"></path>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"></path>
+                </svg>
+              </button>
+              
+            </div>
+
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Options</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <input class="form-check-input" type="checkbox" value="" id="addShape" onclick="toggleAddShape()">
+                    <label class="form-check-label" for="addShape">
+                        Add Shape
+                    </label>
+                </li>
+
+                <br>
+
+                <li class="nav-item">
+                    <input class="form-range" type="range" id="shapeSize" onclick="" min="1" max="500" value="50" disabled>
+                    <br>
+                    <label for="shapeSize" id="sizeLabel" class="toggle">
+                      Size: 50
+                    </label>
+                </li>
+
+                <br>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="shape" id="square" disabled>
+                    <label class="form-check-label" for="square">
+                      Square
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="shape" id="circle" checked disabled>
+                    <label class="form-check-label" for="circle">
+                      Circle
+                    </label>
+                </div>
+
+                  <br>
+
+                  <li class="nav-item">
+                    <label class="form-check-label" for="colour">
+                      Colour
+                    </label>
+                    <br>
+                    <input class="form-check-input" type="color" id="colour" disabled>
+                  </li>
+
+                <br>
+                <br>
+
+                <li class="nav-item">
+                  <input class="form-check-input" type="checkbox" value="" id="moveShape" onclick="toggleMoveShape()" checked="true">
+                  <label class="form-check-label" for="moveShape">
+                      Click and Drag Shapes
+                  </label>
+                </li>
+
+                <br>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Bodies
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" id="shapeList">
+
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div id="matterContainer"></div>
+
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="matter.js"></script>
+<script src="script.js"></script>
+</html>

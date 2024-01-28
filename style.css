@@ -1,0 +1,55 @@
+#matterContainer {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+#shapeSize {
+    width: 80%;
+}
+
+input:disabled + br + label {
+    opacity: 50%;
+}
+
+input[type=color] {
+    width: 50px;
+    height: 50px;
+    background-color: #E9ECEF;
+}
+
+label:has(+ br + input:disabled){
+    opacity: 50%;
+}
+
+.nav-spacing > *{
+    margin: 5px;
+}
+
+#selectedInfo {
+    visibility: hidden;
+}
+
+#overlayCanvas {
+    position: absolute;
+}
+
+#colourChangeText {
+    display: block;
+}
+
+@media (max-width:420px) {
+    #colourChangeText {
+        display: none;
+    }
+}
+
+@media (max-width:330px) {
+    #showId {
+        display: none;
+    }
+}
